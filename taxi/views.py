@@ -42,15 +42,3 @@ class DriverListView(generic.ListView):
 class DriverDetailView(generic.DetailView):
     model = Driver
     queryset = Driver.objects.all()
-
-
-def driver_detail_view(request, HttpRequest, pk: int) -> HttpResponse:
-    try:
-        driver = Driver.objects.get(pk=pk)
-    except Driver.DoesNotExist:
-        raise Http404
-    context = {
-        "driver": driver,
-    }
-    return render(request, "taxi/driver_detail.html", context=context)
-

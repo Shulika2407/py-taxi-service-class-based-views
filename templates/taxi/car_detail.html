@@ -7,7 +7,7 @@
     {% if car.drivers.all %}
         <ul>
             {% for car in car.drivers.all %}
-                <li><a href="{% url 'driver-detail' driver.id %}">{{ driver.username }} </a></li>
+                <li><a href="{% url 'driver-detail' driver.id %}">{{ car.username }} </a></li>
             {% endfor %}
         </ul>
     {% endif %}
