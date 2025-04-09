@@ -4,8 +4,8 @@
     <h1>Driver: {{ driver.username }}</h1>
     {% if driver.cars.all %}
         <ul>
-            {% for driver in driver.cars.all %}
-                <li><a href="{% url 'car-detail' car.id %}">{{ car.id }} {{ car.model }} {{ car.manufacturer.name }}</a></li>
+            {% for car in driver.cars.all %}
+                <li><a href="{% url 'taxi:car-detail' car.id %}">{{ car.id }} {{ car.model }} {{ car.manufacturer.name }}</a></li>
             {% endfor %}
         </ul>
     {% endif %}

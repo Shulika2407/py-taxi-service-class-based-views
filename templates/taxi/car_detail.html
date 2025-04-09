@@ -6,8 +6,8 @@
     <p><strong>Country:</strong> {{ car.manufacturer.country }}</p>
     {% if car.drivers.all %}
         <ul>
-            {% for car in car.drivers.all %}
-                <li><a href="{% url 'driver-detail' driver.id %}">{{ car.username }} </a></li>
+            {% for driver in car.drivers.all %}
+                <li><a href="{% url 'taxi:driver-detail' driver.id %}">{{ driver.username }}</a></li>
             {% endfor %}
         </ul>
     {% endif %}
